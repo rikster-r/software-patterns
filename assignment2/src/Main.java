@@ -1,16 +1,14 @@
 public class Main {
     public static void main(String[] args) {
-        // Factory Method Demo
         System.out.println("=== Factory Method Demo ===");
-        CoffeeFactory coffeeFactory = new EspressoFactory();
-        DessertFactory dessertFactory = new DonutFactory();
+        CoffeeFactory coffeeFactory = new CoffeeFactory();
+        DessertFactory dessertFactory = new DessertFactory();
 
-        Coffee coffee = coffeeFactory.createCoffee();
-        Dessert dessert = dessertFactory.createDessert();
+        Coffee coffee = coffeeFactory.createCoffee("Espresso");
+        Dessert dessert = dessertFactory.createDessert("Donut");
 
         System.out.println("Ordered (separate factories): " + coffee.getName() + " + " + dessert.getName());
 
-        // Abstract Factory Demo
         System.out.println("\n=== Abstract Factory Demo ===");
         CafeFactory italianCafe = new ItalianCafeFactory();
         CafeFactory americanCafe = new AmericanCafeFactory();
