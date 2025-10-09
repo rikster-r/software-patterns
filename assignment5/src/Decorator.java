@@ -1,3 +1,4 @@
+
 abstract class CourseDecorator implements Course {
     protected Course decoratedCourse;
 
@@ -18,11 +19,7 @@ class CertificateDecorator extends CourseDecorator {
 
     @Override
     public String deliverContent() {
-        return super.deliverContent();
-    }
-
-    public String grantCertificate() {
-        return "Certificate";
+        return super.deliverContent() + " + Certificate granted.";
     }
 }
 
@@ -33,11 +30,7 @@ class MentorSupportDecorator extends CourseDecorator {
 
     @Override
     public String deliverContent() {
-        return super.deliverContent();
-    }
-
-    public String giveSupport() {
-        return "Support";
+        return super.deliverContent() + " + Mentor support provided.";
     }
 }
 
@@ -48,11 +41,6 @@ class GamificationDecorator extends CourseDecorator {
 
     @Override
     public String deliverContent() {
-        return super.deliverContent();
-    }
-
-    public String gamify() {
-        return "Gamification";
+        return super.deliverContent() + " + Gamification enabled (points & leaderboard).";
     }
 }
-
