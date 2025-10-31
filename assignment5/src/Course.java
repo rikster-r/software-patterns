@@ -5,13 +5,13 @@ interface Course {
 class MathCourse implements Course {
     @Override
     public String deliverContent() {
-        return "Delivering Math Course content.";
+        return "Math Course";
     }
 }
 
 class ProgrammingCourse implements Course {
     @Override
     public String deliverContent() {
-        return "Delivering Programming Course content.";
+        return "Programming Course";
     }
 }

@@ -11,25 +11,26 @@ class NotificationService {
 }
 
 class StudentPortalFacade {
+    private Student student;
     private final ProgressTracker progressTracker = new ProgressTracker();
     private final NotificationService notificationService = new NotificationService();
 
-    public Course enrollInCourse(String courseName, Course course) {
-        System.out.println("Enrolling in course: " + courseName);
-        notificationService.send("You have successfully enrolled in " + courseName);
-        progressTracker.track(courseName, "Enrolled");
-        return course;
+    public void registerStudent(Student student) {
+        this.student = student;
     }
 
-    public void startLearning(String courseName, Course course) {
-        System.out.println("Starting course: " + courseName);
-        System.out.println(course.deliverContent());
-        progressTracker.track(courseName, "In Progress");
-        notificationService.send("Your learning for " + courseName + " has started!");
+    public void enrollInCourse() {
+        progressTracker.track(student.getCourse().deliverContent(), "Enrolled");
+        notificationService.send("You have successfully enrolled in " + student.getCourse().deliverContent());
     }
 
-    public void completeCourse(String courseName) {
-        progressTracker.track(courseName, "Completed");
-        notificationService.send("🎉 Congratulations! You’ve completed " + courseName + ".");
+    public void startLearning() {
+        progressTracker.track(student.getCourse().deliverContent(), "In Progress");
+        notificationService.send("Your learning for " + student.getCourse().deliverContent() + " has started!");
+    }
+
+    public void completeCourse() {
+        progressTracker.track(student.getCourse().deliverContent(), "Completed");
+        notificationService.send("🎉 Congratulations! You’ve completed " + student.getCourse().deliverContent() + ".");
     }
 }
