@@ -4,17 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12e3c88d-1f4b-4a7c-9839-89728820683a" name="Changes" comment="Add hero class boilerplate">
-      <change afterPath="$PROJECT_DIR$/assignment67/src/Strategy/DefenseStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assignment67/src/Strategy/IStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assignment67/src/Strategy/MagicStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assignment67/src/Strategy/MeleeStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assignment67/src/Strategy/RangedStrategy.java" afterDir="false" />
+    <list default="true" id="12e3c88d-1f4b-4a7c-9839-89728820683a" name="Changes" comment="Add strategies">
+      <change afterPath="$PROJECT_DIR$/assignment67/src/Observer/HeroObserver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assignment67/src/Observer/IHeroObserver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment67/src/Hero/Archer.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment67/src/Hero/Archer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assignment67/src/Hero/IHero.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment67/src/Hero/IHero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment67/src/Hero/Mage.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment67/src/Hero/Mage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment67/src/Hero/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment67/src/Hero/Warrior.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -80,6 +74,9 @@
       <recent name="C:\Users\USER\IdeaProjects\software-patterns\assignment1" />
       <recent name="C:\Users\USER\IdeaProjects\software-patterns\out" />
     </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="Observer" />
+    </key>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -116,7 +113,7 @@
       <workItem from="1761214341662" duration="2511000" />
       <workItem from="1761669006212" duration="65000" />
       <workItem from="1761818721166" duration="3055000" />
-      <workItem from="1761927582251" duration="4193000" />
+      <workItem from="1761927582251" duration="7690000" />
     </task>
     <task id="LOCAL-00001" summary="Add classes">
       <option name="closed" value="true" />
@@ -150,7 +147,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761928092197</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add strategies">
+      <option name="closed" value="true" />
+      <created>1761932302957</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1761932302957</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,6 +177,7 @@
     <MESSAGE value="Add assignment5 decorators" />
     <MESSAGE value="Add assignment5 facade and demo" />
     <MESSAGE value="Add hero class boilerplate" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add hero class boilerplate" />
+    <MESSAGE value="Add strategies" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add strategies" />
   </component>
 </project>
