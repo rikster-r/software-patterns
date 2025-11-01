@@ -17,6 +17,11 @@ public class Archer extends IHero {
     }
 
     @Override
+    public String getEmoji() {
+        return "\uD83C\uDFF9";
+    }
+
+    @Override
     public int getHealth() {
         return health;
     }
@@ -24,11 +29,6 @@ public class Archer extends IHero {
     @Override
     protected void setHealth(int value) {
         this.health = value;
-    }
-
-    @Override
-    public void move() {
-
     }
 
     @Override

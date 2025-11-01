@@ -81,6 +81,16 @@ public class HeroObserver implements IHeroObserver{
     }
 
     @Override
+    public void onForwardMove(IHero self, int steps) {
+        System.out.println(self.getName() + " moves closer by " + steps + " steps.");
+    }
+
+    @Override
+    public void onBackwardMove(IHero self, int steps) {
+        System.out.println(self.getName() + " moves away by " + steps + " steps.");
+    }
+
+    @Override
     public void onDeath(IHero self) {
         System.out.println(self.getName() + " has been defeated!");
     }

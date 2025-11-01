@@ -7,6 +7,10 @@ import java.util.List;
 
 public abstract class IHero {
     protected String name;
+    protected int position;
+    protected static final int MAX_POSITION = 7;
+    protected static final int MIN_POSITION = 0;
+
     protected IStrategy strategy;
     private List<IHeroObserver> observers = new ArrayList<>();
 
@@ -73,6 +77,18 @@ public abstract class IHero {
         }
     }
 
+    public void notifyForwardMovement(int amount) {
+        for (IHeroObserver observer : observers) {
+            observer.onForwardMove(this, amount);
+        }
+    }
+
+    public void notifyBackwardMovement(int amount) {
+        for (IHeroObserver observer : observers) {
+            observer.onBackwardMove(this, amount);
+        }
+    }
+
     public void notifyDeath() {
         for (IHeroObserver observer : observers) {
             observer.onDeath(this);
@@ -113,19 +129,40 @@ public abstract class IHero {
         return getHealth() > 0;
     }
 
-    // action handling
     public void act(IHero target) {
         notifyActionPerformed(target, strategy);
         strategy.act(this, target);
     }
 
-    // movement handling
-    public abstract void move();
+    public int getPosition() {
+        return position;
+    }
 
-    // resource handling
+    public int getMaxPosition() {
+        return MAX_POSITION;
+    }
+
+    public int getMinPosition() {
+        return MIN_POSITION;
+    }
+
+    public void setPosition(int newPosition) {
+        this.position = newPosition;
+    }
+
+    public void moveCloser(int steps) {
+        notifyForwardMovement(steps);
+        position = Math.max(MIN_POSITION, position - steps);
+    }
+
+    public void moveAway(int steps) {
+        notifyBackwardMovement(steps);
+        position = Math.min(MAX_POSITION, position + steps);
+    }
+
+    public abstract String getEmoji();
     public abstract int getResource();
     public abstract String getResourceName(boolean plural);
-    // default version - singular by default
     public String getResourceName() {
         return getResourceName(false);
     }

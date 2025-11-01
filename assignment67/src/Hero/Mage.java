@@ -17,6 +17,11 @@ public class Mage extends IHero {
     }
 
     @Override
+    public String getEmoji() {
+        return "\uD83E\uDDD9";
+    }
+
+    @Override
     public int getHealth() {
         return health;
     }
@@ -25,9 +30,6 @@ public class Mage extends IHero {
     protected void setHealth(int value) {
         this.health = value;
     }
-
-    @Override
-    public void move() {}
 
     @Override
     public int getResource() {

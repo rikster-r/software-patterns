@@ -4,13 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12e3c88d-1f4b-4a7c-9839-89728820683a" name="Changes" comment="Add base game loop facade, improve logic">
-      <change afterPath="$PROJECT_DIR$/assignment67/src/Game/BattleLoop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assignment67/src/Game/GameFacade.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assignment67/src/Game/HeroSelection.java" afterDir="false" />
+    <list default="true" id="12e3c88d-1f4b-4a7c-9839-89728820683a" name="Changes" comment="Refactor facade">
+      <change afterPath="$PROJECT_DIR$/assignment67/src/Game/BattlefieldVisualizer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assignment67/src/Game/StatsViewer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment67/src/Game/GameLoopFacade.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment67/src/Hero/HeroFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment67/src/Hero/HeroFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment67/src/Game/BattleLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment67/src/Game/BattleLoop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment67/src/Game/GameFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment67/src/Game/GameFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment67/src/Hero/Archer.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment67/src/Hero/Archer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment67/src/Hero/IHero.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment67/src/Hero/IHero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment67/src/Hero/Mage.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment67/src/Hero/Mage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment67/src/Hero/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment67/src/Hero/Warrior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment67/src/Observer/HeroObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment67/src/Observer/HeroObserver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment67/src/Observer/IHeroObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment67/src/Observer/IHeroObserver.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +122,7 @@
       <workItem from="1761669006212" duration="65000" />
       <workItem from="1761818721166" duration="3055000" />
       <workItem from="1761927582251" duration="9918000" />
-      <workItem from="1761997050953" duration="3204000" />
+      <workItem from="1761997050953" duration="8424000" />
     </task>
     <task id="LOCAL-00001" summary="Add classes">
       <option name="closed" value="true" />
@@ -175,7 +180,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761999386008</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Refactor facade">
+      <option name="closed" value="true" />
+      <created>1762011449679</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1762011449679</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,6 +213,7 @@
     <MESSAGE value="Add strategies" />
     <MESSAGE value="Add Hero actions observer" />
     <MESSAGE value="Add base game loop facade, improve logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add base game loop facade, improve logic" />
+    <MESSAGE value="Refactor facade" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor facade" />
   </component>
 </project>

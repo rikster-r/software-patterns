@@ -5,7 +5,9 @@ import Observer.HeroObserver;
 
 public class GameFacade {
     private final HeroSelection heroSelection = new HeroSelection();
-    private final BattleLoop battleLoop = new BattleLoop();
+    private final StatsViewer statsViewer = new StatsViewer();
+    private final BattlefieldVisualizer battlefieldVisualizer = new BattlefieldVisualizer();
+    private final BattleLoop battleLoop = new BattleLoop(statsViewer, battlefieldVisualizer);
 
     public void startGame() {
         System.out.println("=== Welcome to Hero Battle (2 Players) ===\n");
