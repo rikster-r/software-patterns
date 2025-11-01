@@ -113,6 +113,7 @@ public abstract class IHero {
         return getHealth() > 0;
     }
 
+    // action handling
     public void act(IHero target) {
         notifyActionPerformed(target, strategy);
         strategy.act(this, target);

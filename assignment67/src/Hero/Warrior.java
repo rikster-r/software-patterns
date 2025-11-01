@@ -2,7 +2,7 @@ package Hero;
 
 public class Warrior extends IHero {
     protected static final int MAX_HEALTH = 180;
-    protected static final int MAX_STAMINA = 30;
+    protected static final int MAX_STAMINA = 20;
 
     private int health = MAX_HEALTH;
     private int stamina = MAX_STAMINA;

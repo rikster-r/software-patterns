@@ -18,7 +18,6 @@ public class MagicStrategy implements IStrategy {
 
         target.takeDamage(damage);
 
-        // use resource
         self.useResource(3);
         self.notifyResourceUsed(3, self.getResource());
     }
@@ -29,7 +28,6 @@ public class MagicStrategy implements IStrategy {
             return 3;
         }
 
-        // impossible to perform
         return Integer.MAX_VALUE;
     }
 }

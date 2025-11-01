@@ -10,7 +10,6 @@ public class MeleeStrategy implements IStrategy {
             return;
         }
 
-        // calculate damage
         int damage = 0;
 
         if (self instanceof Warrior) {
@@ -25,7 +24,6 @@ public class MeleeStrategy implements IStrategy {
 
         target.takeDamage(damage);
 
-        // use resource
         if (self instanceof Warrior) {
             self.useResource(6);
             self.notifyResourceUsed(6, self.getResource());
@@ -45,7 +43,6 @@ public class MeleeStrategy implements IStrategy {
             return 2;
         }
 
-        // impossible
         return Integer.MAX_VALUE;
     }
 }

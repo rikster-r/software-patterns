@@ -21,7 +21,6 @@ public class RangedStrategy implements IStrategy {
 
         target.takeDamage(damage);
 
-        // use resource
         if (self instanceof Mage) {
             self.useResource(1); // mana
             self.notifyResourceUsed(1, self.getResource());
