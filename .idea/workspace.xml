@@ -4,11 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12e3c88d-1f4b-4a7c-9839-89728820683a" name="Changes" comment="Add strategies">
-      <change afterPath="$PROJECT_DIR$/assignment67/src/Observer/HeroObserver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assignment67/src/Observer/IHeroObserver.java" afterDir="false" />
+    <list default="true" id="12e3c88d-1f4b-4a7c-9839-89728820683a" name="Changes" comment="Add Hero actions observer">
+      <change afterPath="$PROJECT_DIR$/assignment67/src/Game/GameLoopFacade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment67/src/Hero/Archer.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment67/src/Hero/Archer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assignment67/src/Hero/IHero.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment67/src/Hero/IHero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment67/src/Hero/Mage.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment67/src/Hero/Mage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment67/src/Hero/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment67/src/Hero/Warrior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment67/src/Observer/HeroObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment67/src/Observer/HeroObserver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment67/src/Observer/IHeroObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment67/src/Observer/IHeroObserver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment67/src/Strategy/DefenseStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment67/src/Strategy/DefenseStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment67/src/Strategy/IStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment67/src/Strategy/IStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment67/src/Strategy/MagicStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment67/src/Strategy/MagicStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment67/src/Strategy/MeleeStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment67/src/Strategy/MeleeStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment67/src/Strategy/RangedStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment67/src/Strategy/RangedStrategy.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +60,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Application.GameLoopFacade.executor&quot;: &quot;Run&quot;,
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
@@ -113,7 +123,8 @@
       <workItem from="1761214341662" duration="2511000" />
       <workItem from="1761669006212" duration="65000" />
       <workItem from="1761818721166" duration="3055000" />
-      <workItem from="1761927582251" duration="7690000" />
+      <workItem from="1761927582251" duration="9918000" />
+      <workItem from="1761997050953" duration="1941000" />
     </task>
     <task id="LOCAL-00001" summary="Add classes">
       <option name="closed" value="true" />
@@ -155,7 +166,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761932302957</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add Hero actions observer">
+      <option name="closed" value="true" />
+      <created>1761935715204</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1761935715204</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,6 +197,7 @@
     <MESSAGE value="Add assignment5 facade and demo" />
     <MESSAGE value="Add hero class boilerplate" />
     <MESSAGE value="Add strategies" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add strategies" />
+    <MESSAGE value="Add Hero actions observer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Hero actions observer" />
   </component>
 </project>

@@ -28,6 +28,24 @@ public class MeleeStrategy implements IStrategy {
         // use resource
         if (self instanceof Warrior) {
             self.useResource(6);
+            self.notifyResourceUsed(6, self.getResource());
+        } else if (self instanceof Archer) {
+            self.useResource(2);
+            self.notifyResourceUsed(1, self.getResource());
         }
+    }
+
+    @Override
+    public int getResourceCost(IHero self) {
+        if (self instanceof Warrior) {
+            return 6;
+        }
+
+        if (self instanceof Archer) {
+            return 2;
+        }
+
+        // impossible
+        return Integer.MAX_VALUE;
     }
 }

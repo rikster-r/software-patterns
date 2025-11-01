@@ -30,6 +30,21 @@ public class Mage extends IHero {
     public void move() {}
 
     @Override
+    public int getResource() {
+        return mana;
+    }
+
+    @Override
+    public String getResourceName(boolean plural) {
+        return "mana";
+    }
+
+    @Override
+    public int getMaxResource() {
+        return MAX_MANA;
+    }
+
+    @Override
     public void useResource(int amount) {
         mana -= amount;
         if (mana < 0) mana = 0;

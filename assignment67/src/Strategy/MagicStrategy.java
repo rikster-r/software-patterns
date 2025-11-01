@@ -20,5 +20,16 @@ public class MagicStrategy implements IStrategy {
 
         // use resource
         self.useResource(3);
+        self.notifyResourceUsed(3, self.getResource());
+    }
+
+    @Override
+    public int getResourceCost(IHero self) {
+        if (self instanceof Mage) {
+            return 3;
+        }
+
+        // impossible to perform
+        return Integer.MAX_VALUE;
     }
 }

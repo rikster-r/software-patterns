@@ -32,6 +32,21 @@ public class Archer extends IHero {
     }
 
     @Override
+    public int getResource() {
+        return arrows;
+    }
+
+    @Override
+    public String getResourceName(boolean plural) {
+        return plural ? "arrows" : "arrow";
+    }
+
+    @Override
+    public int getMaxResource() {
+        return MAX_ARROWS;
+    }
+
+    @Override
     public void useResource(int amount) {
         arrows -= amount;
         if (arrows < 0) arrows = 0;

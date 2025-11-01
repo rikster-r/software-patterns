@@ -37,43 +37,43 @@ public abstract class IHero {
         observers.remove(observer);
     }
 
-    protected void notifyDamageTaken(int damage, int remainingHealth) {
+    public void notifyDamageTaken(int damage, int remainingHealth) {
         for (IHeroObserver observer : observers) {
-            observer.onDamageTaken(this, damage, remainingHealth);
+            observer.onDamageTaken(this, damage, remainingHealth, getMaxHealth());
         }
     }
 
-    protected void notifyHeal(int healAmount, int newHealth) {
+    public void notifyHeal(int healAmount, int newHealth) {
         for (IHeroObserver observer : observers) {
-            observer.onHeal(this, healAmount, newHealth);
+            observer.onHeal(this, healAmount, newHealth, getMaxHealth());
         }
     }
 
-    protected void notifyResourceUsed(int amount, int remaining) {
+    public void notifyResourceUsed(int amount, int remaining) {
         for (IHeroObserver observer : observers) {
-            observer.onResourceUsed(this, amount, remaining);
+            observer.onResourceUsed(this, amount, remaining, getMaxResource());
         }
     }
 
-    protected void notifyResourceReplenished(int amount, int newAmount) {
+    public void notifyResourceReplenished(int amount, int newAmount) {
         for (IHeroObserver observer : observers) {
-            observer.onResourceReplenished(this, amount, newAmount);
+            observer.onResourceReplenished(this, amount, newAmount, getMaxResource());
         }
     }
 
-    protected void notifyActionPerformed(IHero target, IStrategy strategy) {
+    public void notifyActionPerformed(IHero target, IStrategy strategy) {
         for (IHeroObserver observer : observers) {
             observer.onActionPerformed(this, target, strategy);
         }
     }
 
-    protected void notifyStrategyChanged(IStrategy newStrategy, IStrategy oldStrategy) {
+    public void notifyStrategyChanged(IStrategy newStrategy, IStrategy oldStrategy) {
         for (IHeroObserver observer : observers) {
             observer.onStrategyChanged(this, newStrategy, oldStrategy);
         }
     }
 
-    protected void notifyDeath() {
+    public void notifyDeath() {
         for (IHeroObserver observer : observers) {
             observer.onDeath(this);
         }
@@ -109,16 +109,26 @@ public abstract class IHero {
         }
     }
 
-    public void act(IHero self, IHero target) {
-        strategy.act(self, target);
+    public boolean isAlive() {
+        return getHealth() > 0;
+    }
 
+    public void act(IHero target) {
         notifyActionPerformed(target, strategy);
+        strategy.act(this, target);
     }
 
     // movement handling
     public abstract void move();
 
     // resource handling
+    public abstract int getResource();
+    public abstract String getResourceName(boolean plural);
+    // default version - singular by default
+    public String getResourceName() {
+        return getResourceName(false);
+    }
+    public abstract int getMaxResource();
     public abstract void useResource(int amount);
     public abstract void replenishResource(int amount);
 }

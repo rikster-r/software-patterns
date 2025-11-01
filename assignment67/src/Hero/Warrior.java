@@ -32,6 +32,21 @@ public class Warrior extends IHero {
     }
 
     @Override
+    public int getResource() {
+        return stamina;
+    }
+
+    @Override
+    public String getResourceName(boolean plural) {
+        return "stamina";
+    }
+
+    @Override
+    public int getMaxResource() {
+        return MAX_STAMINA;
+    }
+
+    @Override
     public void useResource(int amount) {
         stamina -= amount;
         if (stamina < 0) stamina = 0;

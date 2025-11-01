@@ -24,8 +24,27 @@ public class RangedStrategy implements IStrategy {
         // use resource
         if (self instanceof Mage) {
             self.useResource(1); // mana
+            self.notifyResourceUsed(1, self.getResource());
         } else {
             self.useResource(4); // stamina
+            self.notifyResourceUsed(4, self.getResource());
         }
+    }
+
+    @Override
+    public int getResourceCost(IHero self) {
+        if (self instanceof Archer) {
+            return 4;
+        }
+
+        if (self instanceof Warrior) {
+            return 4;
+        }
+
+        if (self instanceof Mage) {
+            return 1;
+        }
+
+        return 0;
     }
 }

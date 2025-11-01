@@ -1,62 +1,33 @@
 package Observer;
 
-import Hero.IHero;
-import Hero.Mage;
-import Hero.Archer;
-import Hero.Warrior;
-import Strategy.IStrategy;
-import Strategy.DefenseStrategy;
-import Strategy.MagicStrategy;
-import Strategy.MeleeStrategy;
-import Strategy.RangedStrategy;
+import Hero.*;
+import Strategy.*;
 
 public class HeroObserver implements IHeroObserver{
     @Override
-    public void onDamageTaken(IHero self, int damage, int remainingHealth) {
-        System.out.println(self.getName() + " took " + damage + " damage! HP: " + remainingHealth);
+    public void onDamageTaken(IHero self, int damage, int remainingHealth, int maxHealth) {
+        System.out.println(self.getName() + " took " + damage + " damage! Remaining HP: " + remainingHealth + "/" + maxHealth);
     }
 
     @Override
-    public void onHeal(IHero self, int healAmount, int newHealth) {
-        System.out.println(self.getName() + " healed for " + healAmount + "! HP: " + newHealth);
+    public void onHeal(IHero self, int healAmount, int newHealth, int maxHealth) {
+        System.out.println(self.getName() + " healed for " + healAmount + "! Remaining HP: " + newHealth + "/" + maxHealth);
     }
 
     @Override
-    public void onResourceUsed(IHero self, int amount, int remaining) {
-        String resourceType;
-
-        if (self instanceof Mage) {
-            resourceType = "mana";
-        } else if (self instanceof Archer) {
-            resourceType = amount == 1 ? "arrow" : "arrows";
-        } else if (self instanceof Warrior) {
-            resourceType = "stamina";
-        } else {
-            resourceType = "resource";
-        }
-
-        System.out.println(self.getName() + " used " + amount + " " + resourceType + ". Remaining: " + remaining);
+    public void onResourceUsed(IHero self, int amount, int remainingResource, int maxResource) {
+        System.out.println(self.getName() + " used " + amount + " " + self.getResourceName(amount > 1) + ". Remaining: " + remainingResource + "/" + maxResource);
     }
 
     @Override
-    public void onResourceReplenished(IHero self, int amount, int newAmount) {
-        String resourceType;
-
-        if (self instanceof Mage) {
-            resourceType = "mana";
-        } else if (self instanceof Archer) {
-            resourceType = amount == 1 ? "arrow" : "arrows";
-        } else if (self instanceof Warrior) {
-            resourceType = "stamina";
-        } else {
-            resourceType = "resource";
-        }
-
-        System.out.println(self.getName() + " restored " + amount + " " + resourceType + ". Total: " + newAmount);
+    public void onResourceReplenished(IHero self, int amount, int newAmount, int maxAmount) {
+        System.out.println(self.getName() + " restored " + amount + " " + self.getResourceName() + ". Total: " + newAmount + "/" + maxAmount);
     }
 
     @Override
     public void onActionPerformed(IHero self, IHero target, IStrategy strategy) {
+        if (strategy instanceof DefenseStrategy) return;
+
         String action = "";
 
         if (strategy instanceof MeleeStrategy) {
@@ -77,8 +48,6 @@ public class HeroObserver implements IHeroObserver{
             if (self instanceof Mage) {
                 action = "cast a spell on";
             }
-        } else if (strategy instanceof DefenseStrategy) {
-            action = "defended against";
         }
 
         System.out.println(self.getName() + " " + action + " " + target.getName());
