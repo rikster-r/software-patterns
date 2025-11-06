@@ -4,18 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12e3c88d-1f4b-4a7c-9839-89728820683a" name="Changes" comment="Refactor facade">
-      <change afterPath="$PROJECT_DIR$/assignment67/src/Game/BattlefieldVisualizer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assignment67/src/Game/StatsViewer.java" afterDir="false" />
+    <list default="true" id="12e3c88d-1f4b-4a7c-9839-89728820683a" name="Changes" comment="Add positioning logic">
+      <change afterPath="$PROJECT_DIR$/assignment8/src/ComputerPart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assignment8/src/ComputerPartVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment67/src/Game/BattleLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment67/src/Game/BattleLoop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment67/src/Game/GameFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment67/src/Game/GameFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment67/src/Hero/Archer.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment67/src/Hero/Archer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment67/src/Hero/IHero.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment67/src/Hero/IHero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment67/src/Hero/Mage.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment67/src/Hero/Mage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment67/src/Hero/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment67/src/Hero/Warrior.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assignment67/src/Observer/HeroObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment67/src/Observer/HeroObserver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment67/src/Observer/IHeroObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment67/src/Observer/IHeroObserver.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,29 +50,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.GameLoopFacade.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/USER/IdeaProjects/software-patterns&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.GameLoopFacade.executor": "Run",
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/USER/IdeaProjects/software-patterns",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\USER\IdeaProjects\software-patterns\assignment8\src" />
       <recent name="C:\Users\USER\IdeaProjects\software-patterns\assignment1" />
       <recent name="C:\Users\USER\IdeaProjects\software-patterns\out" />
     </key>
@@ -122,7 +117,10 @@
       <workItem from="1761669006212" duration="65000" />
       <workItem from="1761818721166" duration="3055000" />
       <workItem from="1761927582251" duration="9918000" />
-      <workItem from="1761997050953" duration="8424000" />
+      <workItem from="1761997050953" duration="9310000" />
+      <workItem from="1762174878429" duration="1933000" />
+      <workItem from="1762349102505" duration="10000" />
+      <workItem from="1762423365713" duration="2077000" />
     </task>
     <task id="LOCAL-00001" summary="Add classes">
       <option name="closed" value="true" />
@@ -188,7 +186,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762011449679</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Add positioning logic">
+      <option name="closed" value="true" />
+      <created>1762018391063</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1762018391063</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,6 +220,7 @@
     <MESSAGE value="Add Hero actions observer" />
     <MESSAGE value="Add base game loop facade, improve logic" />
     <MESSAGE value="Refactor facade" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor facade" />
+    <MESSAGE value="Add positioning logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add positioning logic" />
   </component>
 </project>

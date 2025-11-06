@@ -52,7 +52,7 @@ public class HeroObserver implements IHeroObserver{
 
         System.out.println(self.getName() + " " + action + " " + target.getName());
     }
-
+    
     @Override
     public void onStrategyChanged(IHero self, IStrategy newStrategy, IStrategy oldStrategy) {
         String action = "";
