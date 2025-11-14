@@ -95,7 +95,7 @@ public abstract class IHero {
 
     // health handling
     public abstract int getHealth();
-    protected abstract void setHealth(int value);
+    public abstract void setHealth(int value);
     public abstract int getMaxHealth();
 
     public void takeDamage(int damage) {
