@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 public class HeroSelection {
     private final Scanner scanner = new Scanner(System.in);
-    private final HeroFactory heroFactory = new HeroFactory();
 
     public IHero chooseHero(String playerLabel) {
         System.out.println(playerLabel + ", enter your name (press Enter to keep default):");
@@ -28,22 +27,20 @@ public class HeroSelection {
             choice = 1;
         }
 
-        String heroType = switch (choice) {
-            case 1 -> "Warrior";
-            case 2 -> "Mage";
-            case 3 -> "Archer";
-            default -> {
-                System.out.println("Invalid choice. Defaulting to Warrior.");
-                yield "Warrior";
-            }
-        };
-
-        IHero hero = heroFactory.makeHero(heroType, playerName + " (" + heroType + ")");
-
-        switch (heroType) {
-            case "Warrior" -> hero.setStrategy(new MeleeStrategy());
-            case "Mage" -> hero.setStrategy(new MagicStrategy());
-            case "Archer" -> hero.setStrategy(new RangedStrategy());
+        IHero hero;
+        if (choice == 1) {
+            hero = HeroBuilder.warrior().name(playerName + " (Warrior)").build();
+            hero.setStrategy(new MeleeStrategy());
+        } else if (choice == 2) {
+            hero = HeroBuilder.mage().name(playerName + " (Mage)").build();
+            hero.setStrategy(new MagicStrategy());
+        } else if (choice == 3) {
+            hero = HeroBuilder.archer().name(playerName + " (Archer)").build();
+            hero.setStrategy(new RangedStrategy());
+        } else {
+            System.out.println("Invalid choice. You are a Warrior then");
+            hero = HeroBuilder.warrior().name(playerName + " (Warrior)").build();
+            hero.setStrategy(new MeleeStrategy());
         }
 
         return hero;

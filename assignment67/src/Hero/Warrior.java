@@ -7,8 +7,8 @@ public class Warrior extends IHero {
     private int health = MAX_HEALTH;
     private int stamina = MAX_STAMINA;
 
-    public Warrior(String name) {
-        super(name);
+    private Warrior(Builder builder) {
+        super(builder.name);
     }
 
     @Override
@@ -57,4 +57,15 @@ public class Warrior extends IHero {
         stamina += amount;
         if (stamina > MAX_STAMINA) stamina = MAX_STAMINA;
     }
+    public static class Builder {
+        private String name;
+        public Builder name(String name) {
+            this.name = name;
+            return this;
+        }
+        public Warrior build() {
+            return new Warrior(this);
+        }
+    }
+
 }

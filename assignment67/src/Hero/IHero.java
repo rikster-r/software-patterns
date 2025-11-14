@@ -10,7 +10,6 @@ public abstract class IHero {
     protected int position;
     protected static final int MAX_POSITION = 7;
     protected static final int MIN_POSITION = 0;
-
     protected IStrategy strategy;
     private List<IHeroObserver> observers = new ArrayList<>();
 
@@ -32,7 +31,6 @@ public abstract class IHero {
         notifyStrategyChanged(strategy, oldStrategy);
     }
 
-    // observer handling
     public void addObserver(IHeroObserver observer) {
         observers.add(observer);
     }

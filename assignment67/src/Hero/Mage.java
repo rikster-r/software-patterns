@@ -7,8 +7,8 @@ public class Mage extends IHero {
     private int health = MAX_HEALTH;
     private int mana = MAX_MANA;
 
-    public Mage(String name) {
-        super(name);
+    private Mage(Builder builder) {
+        super(builder.name);
     }
 
     @Override
@@ -56,5 +56,15 @@ public class Mage extends IHero {
     public void replenishResource(int amount) {
         mana += amount;
         if (mana > MAX_MANA) mana = MAX_MANA;
+    }
+    public static class Builder {
+        private String name;
+        public Builder name(String name) {
+            this.name = name;
+            return this;
+        }
+        public Mage build() {
+            return new Mage(this);
+        }
     }
 }

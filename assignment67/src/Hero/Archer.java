@@ -4,11 +4,11 @@ public class Archer extends IHero {
     protected static final int MAX_HEALTH = 135;
     protected static final int MAX_ARROWS = 15;
 
-    private int health = MAX_HEALTH;
-    private int arrows = MAX_ARROWS;
+    private int health;
+    private int arrows;
 
-    public Archer(String name) {
-        super(name);
+    private Archer(Builder builder) {
+        super(builder.name);
     }
 
     @Override
@@ -56,5 +56,15 @@ public class Archer extends IHero {
     public void replenishResource(int amount) {
         arrows += amount;
         if (arrows > MAX_ARROWS) arrows = MAX_ARROWS;
+    }
+    public static class Builder {
+        private String name;
+        public Builder name(String name) {
+            this.name = name;
+            return this;
+        }
+        public Archer build() {
+            return new Archer(this);
+        }
     }
 }
