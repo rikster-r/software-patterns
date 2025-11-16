@@ -14,7 +14,7 @@ public abstract class IHero {
     protected String name;
     protected int position;
     protected static final int MAX_POSITION = 7;
-    protected static final int MIN_POSITION = 0;
+    protected static final int MIN_POSITION = 1;
     protected IStrategy strategy;
     protected Set<String> usedPotions = new HashSet<>();
     private List<IHeroObserver> observers = new ArrayList<>();
@@ -86,15 +86,9 @@ public abstract class IHero {
         }
     }
 
-    public void notifyForwardMovement(int amount) {
+    public void notifyPositionChange(int newPos) {
         for (IHeroObserver observer : observers) {
-            observer.onForwardMove(this, amount);
-        }
-    }
-
-    public void notifyBackwardMovement(int amount) {
-        for (IHeroObserver observer : observers) {
-            observer.onBackwardMove(this, amount);
+            observer.onPositionChange(this, newPos);
         }
     }
 
@@ -118,19 +112,6 @@ public abstract class IHero {
 
         if (getHealth() == 0 && oldHealth > 0) {
             notifyDeath();
-        }
-    }
-
-    public void heal(int amount) {
-        int oldHealth = getHealth();
-        setHealth(oldHealth + amount);
-        if (getHealth() > getMaxHealth()) {
-            setHealth(getMaxHealth());
-        }
-
-        int actualHeal = getHealth() - oldHealth;
-        if (actualHeal > 0) {
-            notifyHeal(actualHeal, getHealth());
         }
     }
 
@@ -162,18 +143,10 @@ public abstract class IHero {
     }
 
     public void setPosition(int newPosition) {
+        notifyPositionChange(newPosition);
         this.position = newPosition;
     }
 
-    public void moveCloser(int steps) {
-        notifyForwardMovement(steps);
-        position = Math.max(MIN_POSITION, position - steps);
-    }
-
-    public void moveAway(int steps) {
-        notifyBackwardMovement(steps);
-        position = Math.min(MAX_POSITION, position + steps);
-    }
     public void accept(IHeroVisitor visitor) {
         if (this instanceof Warrior w) visitor.visit(w);
         else if (this instanceof Mage m) visitor.visit(m);
