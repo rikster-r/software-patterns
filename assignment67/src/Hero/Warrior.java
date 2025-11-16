@@ -27,7 +27,7 @@ public class Warrior extends IHero {
     }
 
     @Override
-    protected void setHealth(int value) {
+    public void setHealth(int value) {
         this.health = value;
     }
 

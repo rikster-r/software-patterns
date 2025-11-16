@@ -4,10 +4,19 @@ import Hero.IHero;
 
 public class HeroDecorator extends IHero {
     protected IHero base;
-    public HeroDecorator(IHero base) {
+    protected int roundsLeft;
+    public HeroDecorator(IHero base, int rounds) {
         super(base.getName());
         this.base = base;
+        this.roundsLeft = rounds;
     }
+    public void roundPassed() {
+        roundsLeft--;
+    }
+    public boolean expired() {
+        return roundsLeft <= 0;
+    }
+
     public int getHealth() {
         return base.getHealth();
     }
