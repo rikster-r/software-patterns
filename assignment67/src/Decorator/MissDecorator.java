@@ -6,17 +6,16 @@ import java.util.Random;
 
 public class MissDecorator extends HeroDecorator {
     private Random random = new Random();
-    public MissDecorator(IHero base, int rounds) {
-        super(base,rounds);
+    public MissDecorator(IHero base) {
+        super(base, 2, "Miss Potion");
     }
     @Override
     public void act(IHero target) {
-        if (random.nextInt(100) < 30) {
-            System.out.println(getName() + " missed!");
+        if (roundsLeft > 0 && random.nextInt(100) < 30) {
+            notifyPotionEffect("Miss", "missed!");
             return;
         }
         base.act(target);
-
     }
     @Override
     public void takeDamage(int damage) {

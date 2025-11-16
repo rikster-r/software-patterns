@@ -1,15 +1,20 @@
 package Decorator;
 
 import Hero.IHero;
+import Observer.IHeroObserver;
 
 public class HeroDecorator extends IHero {
     protected IHero base;
     protected int roundsLeft;
-    public HeroDecorator(IHero base, int rounds) {
+    protected String effectName;
+    public HeroDecorator(IHero base, int rounds, String effectName) {
         super(base.getName());
         this.base = base;
         this.roundsLeft = rounds;
+        this.effectName = effectName;
+        System.out.println(base.getName() + " uses " + effectName + "! (2 rounds)");
     }
+
     public void roundPassed() {
         roundsLeft--;
     }
@@ -61,5 +66,14 @@ public class HeroDecorator extends IHero {
     }
     public IHero getBase() {
         return base;
+    }
+    @Override
+    public String getHeroType() {
+        return base.getHeroType();
+    }
+    public void notifyPotionEffect(String effectType, String details) {
+        for (IHeroObserver observer : base.getObservers()) {
+            observer.onPotionEffect(this, effectType, roundsLeft, details);
+        }
     }
 }

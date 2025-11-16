@@ -18,6 +18,11 @@ public class HeroObserver implements IHeroObserver{
     public void onResourceUsed(IHero self, int amount, int remainingResource, int maxResource) {
         System.out.println(self.getName() + " used " + amount + " " + self.getResourceName(amount > 1) + ". Remaining: " + remainingResource + "/" + maxResource);
     }
+    @Override
+    public void onPotionEffect(IHero hero, String effectType, int roundsLeft, String details) {
+        System.out.println(hero.getName() + " [" + effectType + "] " + details
+            + (roundsLeft >= 0 ? (" | Potion left: " + roundsLeft + " round(s)") : ""));
+    }
 
     @Override
     public void onResourceReplenished(IHero self, int amount, int newAmount, int maxAmount) {

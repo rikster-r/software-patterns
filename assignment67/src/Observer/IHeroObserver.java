@@ -13,4 +13,6 @@ public interface IHeroObserver {
     void onForwardMove(IHero self, int steps);
     void onBackwardMove(IHero self, int steps);
     void onDeath(IHero self);
+    void onPotionEffect(IHero hero, String effectType, int roundsLeft, String details);
+
 }

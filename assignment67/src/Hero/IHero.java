@@ -3,7 +3,9 @@ package Hero;
 import Strategy.IStrategy;
 import Observer.IHeroObserver;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public abstract class IHero {
     protected String name;
@@ -11,14 +13,20 @@ public abstract class IHero {
     protected static final int MAX_POSITION = 7;
     protected static final int MIN_POSITION = 0;
     protected IStrategy strategy;
+    protected Set<String> usedPotions = new HashSet<>();
     private List<IHeroObserver> observers = new ArrayList<>();
-
+    public List<IHeroObserver> getObservers() {
+        return observers;
+    }
     public IHero(String name) {
         this.name = name;
     }
 
     public String getName() {
         return name;
+    }
+    public String getHeroType() {
+        return getClass().getSimpleName();
     }
 
     public IStrategy getStrategy() {
@@ -125,6 +133,12 @@ public abstract class IHero {
 
     public boolean isAlive() {
         return getHealth() > 0;
+    }
+    public boolean hasUsedPotion(String potionName) {
+        return usedPotions.contains(potionName);
+    }
+    public void markPotionUsed(String potionName) {
+        usedPotions.add(potionName);
     }
 
     public void act(IHero target) {
