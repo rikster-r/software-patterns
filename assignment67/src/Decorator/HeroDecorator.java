@@ -21,7 +21,12 @@ public class HeroDecorator extends IHero {
     public boolean expired() {
         return roundsLeft <= 0;
     }
-
+    public int getRoundsLeft() {
+        return roundsLeft;
+    }
+    public String getEffectName() {
+        return effectName;
+    }
     public int getHealth() {
         return base.getHealth();
     }

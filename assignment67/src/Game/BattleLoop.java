@@ -19,6 +19,7 @@
 
             player1.setPosition(1);
             player2.setPosition(6);
+            HeroVisitor statsVisitor = new HeroVisitor();
 
             while (player1.isAlive() && player2.isAlive()) {
                 System.out.println("\n=======================================");

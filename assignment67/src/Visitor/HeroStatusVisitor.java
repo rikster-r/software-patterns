@@ -24,11 +24,13 @@ public class HeroStatusVisitor implements IHeroVisitor {
     public void visit(Archer archer) {
         System.out.println(archer.getName() + " (Warrior)");
         System.out.println("HP: " + archer.getHealth() + "/" + archer.getMaxHealth());
-        System.out.println("Stamina " + archer.getResource() + "/" + archer.getResource());
+        System.out.println("Arrows " + archer.getResource() + "/" + archer.getResource());
         System.out.println("---------------------");
     }
     @Override
     public void visit(HeroDecorator decorator) {
-        System.out.println(decorator.getBase());
+        System.out.println(decorator.getBase().getName() + "[Decorator Effect" + decorator.getEffectName() + "]");
+        System.out.println("Potions left " + decorator.getRoundsLeft());
+        decorator.getBase().accept(this);
     }
 }

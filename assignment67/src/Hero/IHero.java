@@ -1,7 +1,10 @@
 package Hero;
 
+import Decorator.HeroDecorator;
 import Strategy.IStrategy;
 import Observer.IHeroObserver;
+import Visitor.IHeroVisitor;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -171,7 +174,12 @@ public abstract class IHero {
         notifyBackwardMovement(steps);
         position = Math.min(MAX_POSITION, position + steps);
     }
-
+    public void accept(IHeroVisitor visitor) {
+        if (this instanceof Warrior w) visitor.visit(w);
+        else if (this instanceof Mage m) visitor.visit(m);
+        else if (this instanceof Archer a) visitor.visit(a);
+        else if (this instanceof HeroDecorator h) visitor.visit(h);
+    }
     public abstract String getEmoji();
     public abstract int getResource();
     public abstract String getResourceName(boolean plural);
