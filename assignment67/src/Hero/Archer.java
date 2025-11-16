@@ -4,8 +4,8 @@ public class Archer extends IHero {
     protected static final int MAX_HEALTH = 135;
     protected static final int MAX_ARROWS = 15;
 
-    private int health;
-    private int arrows;
+    private int health = MAX_HEALTH;
+    private int arrows = MAX_ARROWS;
 
     private Archer(Builder builder) {
         super(builder.name);
